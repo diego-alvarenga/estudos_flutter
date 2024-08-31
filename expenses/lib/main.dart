@@ -1,4 +1,3 @@
-import 'package:expenses/components/transaction_form.dart';
 import 'package:flutter/material.dart';
 import 'components/transaction_form.dart';
 import 'components/transaction_list.dart';
@@ -8,26 +7,25 @@ import 'dart:math';
 main() => runApp(ExpensesApp());
 
 class ExpensesApp extends StatelessWidget {
+  final ThemeData tema = ThemeData();
   @override
   Widget build(BuildContext context) {
-    final ThemeData themeApp =ThemeData();
-
     return MaterialApp(
       home: MyHomePage(),
-      theme: themeApp.copyWith(
-        colorScheme: themeApp.colorScheme.copyWith(
+      theme: tema.copyWith(
+        colorScheme: tema.colorScheme.copyWith(
           primary: Colors.purple,
           secondary: Colors.amber,
         ),
-        textTheme: themeApp.textTheme.copyWith(
-          titleLarge: TextStyle(
+        textTheme: tema.textTheme.copyWith(
+          titleLarge: const TextStyle(
             fontFamily: 'OpenSans',
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: Colors.black,
           ),
         ),
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           titleTextStyle: TextStyle(
             fontFamily: 'OpenSans',
             fontSize: 20,
@@ -77,7 +75,6 @@ class _MyHomePageState extends State<MyHomePage> {
     });
 
     Navigator.of(context).pop();
-
   }
 
   @override
