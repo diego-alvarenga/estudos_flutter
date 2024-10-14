@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'screens/Inicio.dart';
+import 'screens/EmAlta.dart';
+import 'screens/Inscricao.dart';
+import 'screens/Biblioteca.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -10,6 +14,13 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
   int _indiceAtual = 0;
+
+  List<Widget> telas = [
+    Inicio(),
+    EmAlta(),
+    Inscricao(),
+    Biblioteca(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +50,7 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
-      body: Container(),
+      body: telas[_indiceAtual],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _indiceAtual,
         onTap: (indice) {
