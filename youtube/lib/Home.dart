@@ -10,6 +10,32 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.grey,
+        ),
+        backgroundColor: Colors.white,
+        title: Image.asset(
+          "imagens/youtube.png",
+          width: 98,
+          height: 22,
+        ),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.videocam),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.search),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.account_circle),
+          ),
+        ],
+      ),
+    );
   }
 }
