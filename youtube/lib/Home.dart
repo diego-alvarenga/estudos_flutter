@@ -8,6 +8,9 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  int _indiceAtual = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,6 +37,23 @@ class _HomeState extends State<Home> {
             onPressed: () {},
             icon: Icon(Icons.account_circle),
           ),
+        ],
+      ),
+      body: Container(),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _indiceAtual,
+        onTap: (indice) {
+          setState(() {
+            _indiceAtual = indice;
+          });
+        },
+        type: BottomNavigationBarType.fixed,
+        fixedColor: Colors.red,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Início"),
+          BottomNavigationBarItem(icon: Icon(Icons.whatshot), label: "Em alta"),
+          BottomNavigationBarItem(icon: Icon(Icons.subscriptions), label: "Inscrições"),
+          BottomNavigationBarItem(icon: Icon(Icons.folder), label: "Biblioteca"),
         ],
       ),
     );
